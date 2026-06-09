@@ -37,3 +37,9 @@ The examples are organized into numbered folders based on the concept they teach
 - Public manifests should use creator-facing nouns such as `main`, `build`, `ai`, `data`, `bundle`, and `links`.
 - External projects with meaningful upstream history should stay in their own repositories and be included as Git submodules.
 - Examples should keep local deterministic fallbacks where possible, so they remain inspectable outside a Vifu host.
+
+## License
+
+Unless otherwise noted, Vifu-authored example code in this repository is licensed under the MIT License.
+
+Third-party examples, Git submodules, assets, and upstream projects keep their own licenses and notices.
