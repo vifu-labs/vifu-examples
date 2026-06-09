@@ -10,5 +10,5 @@ Run it with:
 
 ```bash
 vifu manifest check --dir 01_getting_started/hello_web
-vifu deploy --dir 01_getting_started/hello_web
+vifu deploy 01_getting_started/hello_web
 ```

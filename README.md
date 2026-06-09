@@ -21,7 +21,7 @@ Then run an example much like you would run an ordinary local web project:
 
 ```bash
 vifu manifest check --dir 01_getting_started/hello_web
-vifu deploy --dir 01_getting_started/hello_web
+vifu deploy 01_getting_started/hello_web
 ```
 
 The examples are organized into numbered folders based on the concept they teach. Start with `01_getting_started`, then move into external AI game adoption.
@@ -33,7 +33,7 @@ The examples are organized into numbered folders based on the concept they teach
 
 ## Design Principles
 
-- Each example should be runnable with `vifu deploy --dir <example>`.
+- Each example should be runnable with `vifu deploy <example>`.
 - Public manifests should use creator-facing nouns such as `main`, `build`, `ai`, `data`, `bundle`, and `links`.
 - External projects with meaningful upstream history should stay in their own repositories and be included as Git submodules.
 - Examples should keep local deterministic fallbacks where possible, so they remain inspectable outside a Vifu host.
