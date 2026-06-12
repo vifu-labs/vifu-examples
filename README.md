@@ -1,45 +1,120 @@
 # Vifu Examples
 
-This is a collection of examples for [Vifu](https://vifu.app). Use these examples to learn how to build, adapt, and deploy AI-native web games and apps.
+This repository collects runnable examples for [Vifu](https://vifu.app). Use it
+to learn how to build, adapt, and deploy AI-native browser games and apps.
 
-## Usage
+The examples are intentionally ordinary web projects. If a game can produce a
+static browser build with an `index.html`, it can usually be adapted to Vifu with
+a small `manifest.json` and SDK integration.
 
-Clone this repo with submodules, then install the Vifu CLI:
+## Start Here
+
+Clone with submodules:
 
 ```bash
 git clone --recurse-submodules https://github.com/vifu-labs/vifu-examples
 cd vifu-examples
 ```
 
-If you already cloned it without submodules:
+If you already cloned without submodules:
 
 ```bash
 git submodule update --init --recursive
 ```
 
-Then run an example much like you would run an ordinary local web project:
+Deploy the smallest example:
 
 ```bash
 vifu manifest check --dir 01_getting_started/hello_web
 vifu deploy 01_getting_started/hello_web
 ```
 
-The examples are organized into numbered folders based on the concept they teach. Start with `01_getting_started`, then move into external AI game adoption.
+When you are already inside an example directory, the path is optional:
+
+```bash
+vifu manifest check
+vifu deploy
+```
+
+## What A Vifu Game Needs
+
+At minimum:
+
+- `manifest.json`
+- a browser entry point such as `index.html`
+- a static build output directory
+
+For AI-native features, use the Vifu SDK from game code:
+
+```js
+const result = await Vifu.ai.generateText({
+  model: "basic",
+  messages: [{ role: "user", content: "Give the player a short hint." }]
+});
+```
+
+Do not call external AI or backend APIs directly from deployed game JavaScript.
+The SDK is how games use Vifu auth, model routing, quota, save state, resources,
+and future platform services.
+
+## Deploy Rules
+
+`vifu deploy` validates the built output before upload.
+
+Allowed:
+
+- bundled JavaScript
+- local assets in the build output
+- Google Fonts
+- approved pinned static CSS, fonts, images, and media from package CDNs
+- ordinary external links
+- Vifu SDK calls for AI and backend services
+
+Blocked:
+
+- CDN JavaScript
+- remote `import(...)`, `importScripts(...)`, or Worker scripts
+- remote `.js`, `.mjs`, or `.wasm` URLs
+- direct calls to external AI/backend APIs
+- local-only providers such as LM Studio or Ollama in deployed builds
+
+If deploy fails, the CLI prints the built file, line, rule, URL, and suggested
+fix.
 
 ## Examples
 
-- [**`01_getting_started/`**](01_getting_started) shows the smallest deployable Vifu web app shape.
-- [**`02_external_ai_games/`**](02_external_ai_games) shows how to bring existing AI-native games to Vifu without rewriting them.
+- [`01_getting_started/`](01_getting_started) shows the smallest deployable Vifu
+  web app shape.
+- [`02_external_ai_games/`](02_external_ai_games) shows how to bring existing
+  AI-native games to Vifu with minimal changes.
+
+## Adapting Your Own Game
+
+1. Add a V1 `manifest.json`.
+2. Set `build.command` and `build.output`.
+3. Make sure the build output contains `index.html`.
+4. Replace direct AI/backend calls with the Vifu SDK.
+5. Keep optional local or third-party AI providers out of the deployed bundle.
+6. Run `vifu deploy`.
+
+For external projects with meaningful upstream history, keep the game in its own
+repository and include it as a Git submodule. That makes the adaptation diff easy
+to inspect.
 
 ## Design Principles
 
 - Each example should be runnable with `vifu deploy <example>`.
-- Public manifests should use creator-facing nouns such as `main`, `build`, `ai`, `data`, `bundle`, and `links`.
-- External projects with meaningful upstream history should stay in their own repositories and be included as Git submodules.
-- Examples should keep local deterministic fallbacks where possible, so they remain inspectable outside a Vifu host.
+- Public manifests should use creator-facing nouns such as `main`, `build`,
+  `ai`, `data`, `bundle`, and `links`.
+- Examples should demonstrate visible product capabilities, not only internal
+  plumbing.
+- Examples should keep deterministic local fallbacks where useful, but deployed
+  builds should use Vifu SDK calls for platform services.
 
 ## License
 
-Unless otherwise noted, Vifu-authored example code in this repository is licensed under the MIT License.
+Unless otherwise noted, Vifu-authored example code in this repository is
+licensed under the MIT License.
 
-Third-party examples, Git submodules, assets, and upstream projects keep their own licenses and notices.
+Third-party examples, Git submodules, assets, and upstream projects keep their
+own licenses and notices.
