@@ -1,11 +1,16 @@
 # Vifu Examples
 
-This repository collects runnable examples for [Vifu](https://vifu.app). Use it
+This repository collects runnable examples for [Vifu](https://vifu.ai). Use it
 to learn how to build, adapt, and deploy AI-native browser games and apps.
 
-The examples are intentionally ordinary web projects. If a game can produce a
+Most examples are intentionally ordinary web projects. If a game can produce a
 static browser build with an `index.html`, it can usually be adapted to Vifu with
 a small `manifest.json` and SDK integration.
+
+Managed source examples should be more like Hugging Face repos: the source file
+is the product, and metadata is optional. For example, an Anki project can be a
+folder with an `.apkg` file that `vifu deploy` can infer and send to the
+platform Anki runtime.
 
 ## Start Here
 
@@ -38,11 +43,15 @@ vifu deploy
 
 ## What A Vifu Game Needs
 
-At minimum:
+For a custom web game, at minimum:
 
 - `manifest.json`
 - a browser entry point such as `index.html`
 - a static build output directory
+
+For managed source runtimes, prefer convention over configuration. A single
+APKG Anki example should not need a manifest unless it wants to override the
+default runtime behavior.
 
 For AI-native features, use the Vifu SDK from game code:
 
@@ -90,7 +99,7 @@ fix.
 
 ## Adapting Your Own Game
 
-1. Add a V1 `manifest.json`.
+1. For a custom web game, add a V1 `manifest.json`.
 2. Set `build.command` and `build.output`.
 3. Make sure the build output contains `index.html`.
 4. Replace direct AI/backend calls with the Vifu SDK.
@@ -104,8 +113,9 @@ to inspect.
 ## Design Principles
 
 - Each example should be runnable with `vifu deploy <example>`.
-- Public manifests should use creator-facing nouns such as `main`, `build`,
-  `ai`, `data`, `bundle`, and `links`.
+- Public manifests are for custom runtime overrides. Managed source examples
+  should start from files and add metadata only when it changes behavior or
+  presentation.
 - Examples should demonstrate visible product capabilities, not only internal
   plumbing.
 - Examples should keep deterministic local fallbacks where useful, but deployed

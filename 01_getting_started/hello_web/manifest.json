@@ -1,23 +1,13 @@
 {
-  "manifestVersion": 1,
-  "type": "game",
-  "name": "Hello Web",
-  "version": "1.0.0",
+  "name": "hello_web",
+  "title": "Hello Web",
   "description": "A minimal static web app that can be deployed to Vifu.",
   "tags": [
     "getting-started",
-    "static-web"
+    "static-web",
+    "maker"
   ],
-  "main": {
-    "url": "index.html",
-    "type": "static-web",
-    "engine": "vanilla",
-    "sdk": "auto"
-  },
-  "build": {
-    "output": "target/web"
-  },
-  "category": "getting-started",
+  "category": "creative",
   "remix": {
     "access": "owner"
   }
