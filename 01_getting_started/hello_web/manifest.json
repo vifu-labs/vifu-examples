@@ -1,14 +1,3 @@
 {
-  "name": "hello_web",
-  "title": "Hello Web",
-  "description": "A minimal static web app that can be deployed to Vifu.",
-  "tags": [
-    "getting-started",
-    "static-web",
-    "maker"
-  ],
-  "category": "creative",
-  "remix": {
-    "access": "owner"
-  }
+  "name": "hello_web"
 }

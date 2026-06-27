@@ -45,7 +45,7 @@ vifu deploy
 
 For a custom web game, at minimum:
 
-- `manifest.json`
+- `manifest.json` with a `name`
 - a browser entry point such as `index.html`
 - a static build output directory
 
@@ -100,7 +100,7 @@ fix.
 ## Adapting Your Own Game
 
 1. For a custom web game, add a V1 `manifest.json`.
-2. Set `build.command` and `build.output`.
+2. Start with only `name`; let Vifu infer common entry and build settings.
 3. Make sure the build output contains `index.html`.
 4. Replace direct AI/backend calls with the Vifu SDK.
 5. Keep optional local or third-party AI providers out of the deployed bundle.
