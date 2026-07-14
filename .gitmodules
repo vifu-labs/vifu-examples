@@ -1,6 +1,6 @@
 [submodule "02_external_ai_games/aiventure"]
 	path = 02_external_ai_games/aiventure
-	url = https://github.com/vifu-labs/AIventure
+	url = https://github.com/vifudotdev/AIventure
 [submodule "ai-town"]
 	path = ai-town
 	url = https://github.com/vifudotdev/ai-town

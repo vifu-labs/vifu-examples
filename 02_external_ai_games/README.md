@@ -8,7 +8,7 @@ These examples show how to bring existing AI-native games to Vifu with minimal c
 
 AIventure is included as a Git submodule so its upstream history remains inspectable:
 
-https://github.com/vifu-labs/AIventure
+https://github.com/vifudotdev/AIventure
 
 If the folder is empty after cloning:
 

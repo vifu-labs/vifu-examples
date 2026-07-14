@@ -17,7 +17,7 @@ platform Anki runtime.
 Clone with submodules:
 
 ```bash
-git clone --recurse-submodules https://github.com/vifu-labs/vifu-examples
+git clone --recurse-submodules https://github.com/vifudotdev/vifu-examples
 cd vifu-examples
 ```
 
