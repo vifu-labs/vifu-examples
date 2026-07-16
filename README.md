@@ -1,24 +1,16 @@
-# Vifu Examples
+# Awesome Open Source AI Native Games
 
-This repository collects runnable examples for [Vifu](https://vifu.ai). Use it
-to learn how to build, adapt, and deploy AI-native browser games and apps.
+A curated collection of open-source AI-native games and Vifu starters. Every
+game keeps its original GitHub project visible while its Vifu integration makes
+it a first-class project in Vifu's publish and runtime environment.
 
-Most examples are intentionally ordinary web projects. If a game can produce a
-static browser build with an `index.html`, it can usually be adapted to Vifu with
-a small `manifest.json` and SDK integration.
-
-Managed source examples should be more like Hugging Face repos: the source file
-is the product, and metadata is optional. For example, an Anki project can be a
-folder with an `.apkg` file that `vifu deploy` can infer and send to the
-platform Anki runtime.
-
-## Start Here
+## Get The Collection
 
 Clone with submodules:
 
 ```bash
-git clone --recurse-submodules https://github.com/vifudotdev/vifu-examples
-cd vifu-examples
+git clone --recurse-submodules https://github.com/vifudotdev/awesome-open-source-ai-native-games
+cd awesome-open-source-ai-native-games
 ```
 
 If you already cloned without submodules:
@@ -27,21 +19,40 @@ If you already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-Deploy the smallest example:
+## Games
+
+### [AIventure](games/aiventure)
+
+- **Original project:** [bebechien/AIventure](https://github.com/bebechien/AIventure)
+- **Vifu integration:** brings AIventure into Vifu's publish and runtime flow.
+  `@vifu/hub` establishes its Vifu-native game surface for AI agents and tools,
+  game state, resources, worlds, and approved runtime capabilities. AIventure
+  uses it for model-driven NPC play without embedding provider credentials or
+  host plumbing in the game.
+
+The Vifu integration is a Git submodule, so its source and integration history
+stay inspectable alongside the original project.
+
+## Starters
+
+### [Hello Web](starters/hello-web)
+
+A first-party static browser starter for testing the smallest Vifu deployment
+shape:
 
 ```bash
-vifu manifest check --dir 01_getting_started/hello_web
-vifu deploy 01_getting_started/hello_web
+vifu manifest check --dir starters/hello-web
+vifu deploy starters/hello-web
 ```
 
-When you are already inside an example directory, the path is optional:
+When you are already inside a game or starter directory, the path is optional:
 
 ```bash
 vifu manifest check
 vifu deploy
 ```
 
-## What A Vifu Game Needs
+## Vifu Integration
 
 For a custom web game, at minimum:
 
@@ -50,21 +61,25 @@ For a custom web game, at minimum:
 - a static build output directory
 
 For managed source runtimes, prefer convention over configuration. A single
-APKG Anki example should not need a manifest unless it wants to override the
+APKG Anki project should not need a manifest unless it wants to override the
 default runtime behavior.
 
-For AI-native features, use the Vifu SDK from game code:
+Vifu Hub is the platform interface from game code. It covers AI agents and
+tools, game state, runtime resources, world sessions, events, and other
+host-approved capabilities. For example:
 
 ```js
-const result = await Vifu.ai.generateText({
+import * as hub from "@vifu/hub";
+
+const result = await hub.ai.generateText({
   model: "basic",
   messages: [{ role: "user", content: "Give the player a short hint." }]
 });
 ```
 
 Do not call external AI or backend APIs directly from deployed game JavaScript.
-The SDK is how games use Vifu auth, model routing, quota, save state, resources,
-and future platform services.
+Vifu Hub keeps identity, model routing, quota, runtime policy, and host
+transport outside the game bundle.
 
 ## Deploy Rules
 
@@ -77,7 +92,7 @@ Allowed:
 - Google Fonts
 - approved pinned static CSS, fonts, images, and media from package CDNs
 - ordinary external links
-- Vifu SDK calls for AI and backend services
+- Vifu Hub calls for AI and backend services
 
 Blocked:
 
@@ -90,41 +105,36 @@ Blocked:
 If deploy fails, the CLI prints the built file, line, rule, URL, and suggested
 fix.
 
-## Examples
+## Add A Game
 
-- [`01_getting_started/`](01_getting_started) shows the smallest deployable Vifu
-  web app shape.
-- [`02_external_ai_games/`](02_external_ai_games) shows how to bring existing
-  AI-native games to Vifu with minimal changes.
-
-## Adapting Your Own Game
-
-1. For a custom web game, add a V1 `manifest.json`.
-2. Start with only `name`; let Vifu infer common entry and build settings.
-3. Make sure the build output contains `index.html`.
-4. Replace direct AI/backend calls with the Vifu SDK.
+1. Link the original GitHub project and preserve its license and notices.
+2. Integrate the project with Vifu's publish and runtime flow while preserving
+   its game identity and core play loop.
+3. Declare the game in `manifest.json` and let Vifu infer common build settings.
+4. Use Vifu Hub as the game-to-platform interface for AI, state, resources, and
+   other capabilities the game needs.
 5. Keep optional local or third-party AI providers out of the deployed bundle.
 6. Run `vifu deploy`.
 
-For external projects with meaningful upstream history, keep the game in its own
-repository and include it as a Git submodule. That makes the adaptation diff easy
+For upstream projects with meaningful history, keep the game in its own
+repository and include it as a Git submodule. That makes the integration history easy
 to inspect.
 
-## Design Principles
+## Collection Principles
 
-- Each example should be runnable with `vifu deploy <example>`.
-- Public manifests are for custom runtime overrides. Managed source examples
+- Each game or starter should be runnable with `vifu deploy <path>`.
+- Public manifests identify games and configure runtime behavior. Managed source projects
   should start from files and add metadata only when it changes behavior or
   presentation.
-- Examples should demonstrate visible product capabilities, not only internal
-  plumbing.
-- Examples should keep deterministic local fallbacks where useful, but deployed
-  builds should use Vifu SDK calls for platform services.
+- Entries identify their original GitHub project and describe their Vifu-native
+  integration.
+- Projects should keep deterministic local fallbacks where useful, but deployed
+  builds should use Vifu Hub calls for platform services.
 
 ## License
 
-Unless otherwise noted, Vifu-authored example code in this repository is
+Unless otherwise noted, Vifu-authored code in this repository is
 licensed under the MIT License.
 
-Third-party examples, Git submodules, assets, and upstream projects keep their
+Third-party projects, Git submodules, assets, and upstream projects keep their
 own licenses and notices.
