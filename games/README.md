@@ -29,3 +29,23 @@ git submodule update --init --recursive
 AI Town is a virtual town where AI characters live, chat, and socialize. Its
 source remains a Git submodule so the upstream project and Vifu integration
 history stay inspectable together.
+
+## [Agentshire](agentshire)
+
+- **Original project:** [vifudotdev/Agentshire](https://github.com/vifudotdev/Agentshire)
+- **Runtime model:** An OpenClaw/QClaw plugin that maps agents to social NPCs
+  in a browser-based 3D town, with a WebSocket event bridge, town editor, and
+  character workshop.
+
+Agentshire remains a Git submodule so its plugin, bridge, and 3D town frontend
+can evolve with their own source history.
+
+## [Microverse](microverse)
+
+- **Original project:** [KsanaDock/Microverse](https://github.com/KsanaDock/Microverse)
+- **Runtime model:** A Godot 4 multi-agent social sandbox where autonomous
+  characters talk, form memories, plan tasks, and move through a shared
+  workplace.
+
+The Vifu-maintained fork remains a Git submodule so the Godot project and its
+integration work retain their own source history.

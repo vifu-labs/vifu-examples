@@ -4,3 +4,9 @@
 [submodule "ai-town"]
 	path = games/ai-town
 	url = https://github.com/vifudotdev/ai-town
+[submodule "agentshire"]
+	path = games/agentshire
+	url = https://github.com/vifudotdev/Agentshire
+[submodule "microverse"]
+	path = games/microverse
+	url = https://github.com/vifudotdev/Microverse

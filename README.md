@@ -44,6 +44,26 @@ AI Town is a virtual town where AI characters live, chat, and socialize. It is
 included as a Git submodule so its original source and Vifu integration history
 remain visible together.
 
+### [Agentshire](games/agentshire)
+
+- **Original project:** [vifudotdev/Agentshire](https://github.com/vifudotdev/Agentshire)
+- **Runtime model:** An OpenClaw/QClaw plugin that maps agents to social NPCs
+  in a browser-based 3D town, with a WebSocket event bridge, town editor, and
+  character workshop.
+
+Agentshire is included as a Git submodule so its plugin, bridge, and 3D town
+frontend retain their own source history.
+
+### [Microverse](games/microverse)
+
+- **Original project:** [KsanaDock/Microverse](https://github.com/KsanaDock/Microverse)
+- **Runtime model:** A Godot 4 multi-agent social sandbox where autonomous
+  characters talk, form memories, plan tasks, and move through a shared
+  workplace.
+
+The Vifu-maintained fork is included as a Git submodule so the Godot project
+and its integration work retain their own source history.
+
 ## Starters
 
 ### [Hello Web](starters/hello-web)
