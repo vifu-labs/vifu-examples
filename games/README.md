@@ -18,3 +18,14 @@ If the folder is empty after cloning:
 ```bash
 git submodule update --init --recursive
 ```
+
+## [AI Town](ai-town)
+
+- **Original project:** [a16z-infra/ai-town](https://github.com/a16z-infra/ai-town)
+- **Vifu integration:** Vifu build configuration and runtime adapters connect
+  the town simulation's Convex-style state and world sessions to the Vifu game
+  runtime.
+
+AI Town is a virtual town where AI characters live, chat, and socialize. Its
+source remains a Git submodule so the upstream project and Vifu integration
+history stay inspectable together.

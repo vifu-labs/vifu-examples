@@ -33,6 +33,17 @@ git submodule update --init --recursive
 The Vifu integration is a Git submodule, so its source and integration history
 stay inspectable alongside the original project.
 
+### [AI Town](games/ai-town)
+
+- **Original project:** [a16z-infra/ai-town](https://github.com/a16z-infra/ai-town)
+- **Vifu integration:** Vifu build configuration and runtime adapters connect
+  the town simulation's Convex-style state and world sessions to the Vifu game
+  runtime.
+
+AI Town is a virtual town where AI characters live, chat, and socialize. It is
+included as a Git submodule so its original source and Vifu integration history
+remain visible together.
+
 ## Starters
 
 ### [Hello Web](starters/hello-web)

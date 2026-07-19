@@ -2,5 +2,5 @@
 	path = games/aiventure
 	url = https://github.com/vifudotdev/AIventure
 [submodule "ai-town"]
-	path = ai-town
+	path = games/ai-town
 	url = https://github.com/vifudotdev/ai-town
