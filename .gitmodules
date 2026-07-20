@@ -1,15 +1,15 @@
 [submodule "games/aiventure"]
 	path = games/aiventure
-	url = https://github.com/vifudotdev/AIventure
+	url = https://github.com/chenyanming/AIventure
 [submodule "ai-town"]
 	path = games/ai-town
-	url = https://github.com/vifudotdev/ai-town
+	url = https://github.com/chenyanming/ai-town
 [submodule "agentshire"]
 	path = games/agentshire
-	url = https://github.com/vifudotdev/Agentshire
+	url = https://github.com/chenyanming/Agentshire
 [submodule "microverse"]
 	path = games/microverse
-	url = https://github.com/vifudotdev/Microverse
+	url = https://github.com/chenyanming/Microverse
 [submodule "games/ai-death-game"]
 	path = games/ai-death-game
-	url = https://github.com/vifudotdev/ai-death-game
+	url = https://github.com/chenyanming/ai-death-game
