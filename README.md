@@ -47,6 +47,7 @@ remain visible together.
 ### [Agentshire](games/agentshire)
 
 - **Original project:** [vifudotdev/Agentshire](https://github.com/vifudotdev/Agentshire)
+- **Play on VifuHub:** [Open Agentshire](https://vifu.ai/damon/agentshire)
 - **Runtime model:** An OpenClaw/QClaw plugin that maps agents to social NPCs
   in a browser-based 3D town, with a WebSocket event bridge, town editor, and
   character workshop.
@@ -57,6 +58,7 @@ frontend retain their own source history.
 ### [Microverse](games/microverse)
 
 - **Original project:** [KsanaDock/Microverse](https://github.com/KsanaDock/Microverse)
+- **Play on VifuHub:** [Open Microverse](https://vifu.ai/damon/microverse)
 - **Runtime model:** A Godot 4 multi-agent social sandbox where autonomous
   characters talk, form memories, plan tasks, and move through a shared
   workplace.
@@ -72,15 +74,15 @@ A first-party static browser starter for testing the smallest Vifu deployment
 shape:
 
 ```bash
-vifu manifest check --dir starters/hello-web
-vifu deploy starters/hello-web
+vf manifest check --dir starters/hello-web
+vf deploy starters/hello-web
 ```
 
 When you are already inside a game or starter directory, the path is optional:
 
 ```bash
-vifu manifest check
-vifu deploy
+vf manifest check
+vf deploy
 ```
 
 ## Vifu Integration
@@ -114,7 +116,7 @@ transport outside the game bundle.
 
 ## Deploy Rules
 
-`vifu deploy` validates the built output before upload.
+`vf deploy` validates the built output before upload.
 
 Allowed:
 
@@ -145,7 +147,7 @@ fix.
 4. Use Vifu Hub as the game-to-platform interface for AI, state, resources, and
    other capabilities the game needs.
 5. Keep optional local or third-party AI providers out of the deployed bundle.
-6. Run `vifu deploy`.
+6. Run `vf deploy`.
 
 For upstream projects with meaningful history, keep the game in its own
 repository and include it as a Git submodule. That makes the integration history easy
@@ -153,7 +155,7 @@ to inspect.
 
 ## Collection Principles
 
-- Each game or starter should be runnable with `vifu deploy <path>`.
+- Each game or starter should be runnable with `vf deploy <path>`.
 - Public manifests identify games and configure runtime behavior. Managed source projects
   should start from files and add metadata only when it changes behavior or
   presentation.

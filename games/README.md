@@ -33,6 +33,7 @@ history stay inspectable together.
 ## [Agentshire](agentshire)
 
 - **Original project:** [vifudotdev/Agentshire](https://github.com/vifudotdev/Agentshire)
+- **Play on VifuHub:** [Open Agentshire](https://vifu.ai/damon/agentshire)
 - **Runtime model:** An OpenClaw/QClaw plugin that maps agents to social NPCs
   in a browser-based 3D town, with a WebSocket event bridge, town editor, and
   character workshop.
@@ -43,6 +44,7 @@ can evolve with their own source history.
 ## [Microverse](microverse)
 
 - **Original project:** [KsanaDock/Microverse](https://github.com/KsanaDock/Microverse)
+- **Play on VifuHub:** [Open Microverse](https://vifu.ai/damon/microverse)
 - **Runtime model:** A Godot 4 multi-agent social sandbox where autonomous
   characters talk, form memories, plan tasks, and move through a shared
   workplace.
