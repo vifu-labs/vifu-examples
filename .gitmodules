@@ -10,3 +10,6 @@
 [submodule "microverse"]
 	path = games/microverse
 	url = https://github.com/vifudotdev/Microverse
+[submodule "games/ai-death-game"]
+	path = games/ai-death-game
+	url = https://github.com/vifudotdev/ai-death-game
