@@ -6,6 +6,7 @@ a Vifu-native game without obscuring its authorship or upstream history.
 ## [AIventure](aiventure)
 
 - **Original project:** [bebechien/AIventure](https://github.com/bebechien/AIventure)
+- **Play on VifuHub:** [Open AIventure](https://vifu.ai/damon/AIventure)
 - **Vifu integration:** Vifu publishing and runtime support, with `@vifu/hub`
   as the game-to-platform interface for AI, tools, state, resources, and other
   host-managed capabilities.
@@ -22,6 +23,7 @@ git submodule update --init --recursive
 ## [AI Town](ai-town)
 
 - **Original project:** [a16z-infra/ai-town](https://github.com/a16z-infra/ai-town)
+- **Play on VifuHub:** [Open AI Town](https://vifu.ai/damon/ai-town)
 - **Vifu integration:** Vifu build configuration and runtime adapters connect
   the town simulation's Convex-style state and world sessions to the Vifu game
   runtime.
@@ -32,7 +34,7 @@ history stay inspectable together.
 
 ## [Agentshire](agentshire)
 
-- **Original project:** [vifudotdev/Agentshire](https://github.com/vifudotdev/Agentshire)
+- **Original project:** [Agentshire/Agentshire](https://github.com/Agentshire/Agentshire)
 - **Play on VifuHub:** [Open Agentshire](https://vifu.ai/damon/agentshire)
 - **Runtime model:** An OpenClaw/QClaw plugin that maps agents to social NPCs
   in a browser-based 3D town, with a WebSocket event bridge, town editor, and
