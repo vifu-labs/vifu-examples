@@ -20,7 +20,7 @@ git submodule update --init --recursive
 
 ## Games
 
-### [AIventure](games/aiventure)
+### [AIventure](https://github.com/chenyanming/AIventure)
 
 - **Original project:** [bebechien/AIventure](https://github.com/bebechien/AIventure)
 - **Play:** [Open AIventure](https://vifu.ai/damon/AIventure)
@@ -29,7 +29,7 @@ AIventure is a multiplayer adventure game where players explore a persistent
 world with AI-driven characters. Its source remains available as a Git
 submodule.
 
-### [AI Town](games/ai-town)
+### [AI Town](https://github.com/chenyanming/ai-town)
 
 - **Original project:** [a16z-infra/ai-town](https://github.com/a16z-infra/ai-town)
 - **Play:** [Open AI Town](https://vifu.ai/damon/ai-town)
@@ -37,7 +37,7 @@ submodule.
 AI Town is a virtual town where AI characters live, chat, and socialize. Its
 source remains available as a Git submodule.
 
-### [AI Death Game](games/ai-death-game)
+### [AI Death Game](https://github.com/chenyanming/ai-death-game)
 
 - **Original project:** [yami-inc/ai-death-game](https://github.com/yami-inc/ai-death-game)
 - **Play:** [Open AI Death Game](https://vifu.ai/damon/ai-death-game)
@@ -45,7 +45,7 @@ source remains available as a Git submodule.
 AI Death Game is a narrative survival game where five AI characters debate,
 betray, and vote while the player directs the game as its GM.
 
-### [Agentshire](games/agentshire)
+### [Agentshire](https://github.com/chenyanming/Agentshire)
 
 - **Original project:** [Agentshire/Agentshire](https://github.com/Agentshire/Agentshire)
 - **Play:** [Open Agentshire](https://vifu.ai/damon/agentshire)
@@ -56,7 +56,7 @@ betray, and vote while the player directs the game as its GM.
 Agentshire is included as a Git submodule so its plugin, bridge, and 3D town
 frontend retain their own source history.
 
-### [Microverse](games/microverse)
+### [Microverse](https://github.com/chenyanming/Microverse)
 
 - **Original project:** [KsanaDock/Microverse](https://github.com/KsanaDock/Microverse)
 - **Play:** [Open Microverse](https://vifu.ai/damon/microverse)
